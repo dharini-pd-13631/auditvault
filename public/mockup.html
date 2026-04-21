@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AuditVault UI Preview</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif;background:#f3f4f6;color:#111827}
+/* Header */
+.hdr{background:#4f46e5;color:#fff;text-align:center;padding:14px 0;font-size:17px;font-weight:700;letter-spacing:.02em}
+/* Section label */
+.lbl{text-align:center;font-size:11px;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.1em;padding:22px 0 10px}
+/* Screen wrapper */
+.sc{background:#f9fafb;border:1px solid #e5e7eb;border-radius:14px;margin:0 20px 28px;overflow:hidden}
+/* Layout */
+.flex{display:flex}
+/* Sidebar */
+.sb{width:200px;background:#fff;border-right:1px solid #e5e7eb;display:flex;flex-direction:column;flex-shrink:0}
+.sb-logo{padding:16px 20px;border-bottom:1px solid #f3f4f6;font-size:15px;font-weight:800;color:#4f46e5}
+.sb-nav{flex:1;padding:10px;display:flex;flex-direction:column;gap:3px}
+.ni{display:flex;align-items:center;gap:9px;padding:9px 12px;border-radius:9px;font-size:13px;font-weight:500;color:#4b5563;text-decoration:none}
+.ni.ac{background:#4f46e5;color:#fff}
+.ni-icon{width:16px;height:16px;flex-shrink:0}
+.sb-usr{padding:12px 16px;border-top:1px solid #f3f4f6;display:flex;align-items:center;gap:10px}
+.avt{width:32px;height:32px;border-radius:50%;background:#e0e7ff;display:flex;align-items:center;justify-content:center;color:#4f46e5;font-weight:800;font-size:13px;flex-shrink:0}
+.usr-name{font-size:13px;font-weight:600;color:#1f2937}
+.usr-role{font-size:11px;color:#6b7280}
+/* Main content */
+.main{flex:1;padding:22px;display:flex;flex-direction:column;gap:18px;background:#f9fafb}
+.row-sb{display:flex;align-items:center;justify-content:space-between}
+h1{font-size:21px;font-weight:800;color:#111827}
+h2{font-size:14px;font-weight:700;color:#1f2937;margin-bottom:14px}
+.sub{font-size:13px;color:#6b7280;margin-top:3px}
+/* Button */
+.btn{display:inline-flex;align-items:center;justify-content:center;background:#4f46e5;color:#fff;border:none;padding:9px 18px;border-radius:9px;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none}
+.btn-purple{background:#7c3aed}.btn-green{background:#16a34a}
+/* Grid 3 */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+/* Score cards */
+.sc-blue{background:#eef2ff;border-radius:12px;padding:16px}
+.sc-purple{background:#f5f3ff;border-radius:12px;padding:16px}
+.sc-green{background:#f0fdf4;border-radius:12px;padding:16px}
+.sc-label{font-size:12px;color:#4b5563;margin-bottom:4px}
+.sc-num{font-size:28px;font-weight:800;margin:3px 0 8px}
+.sc-num-blue{color:#4338ca}
+.sc-num-purple{color:#7c3aed}
+.sc-num-green{color:#15803d}
+.bar-bg{background:#fff;border-radius:999px;height:8px;overflow:hidden}
+.bar-fill{height:100%;border-radius:999px}
+.bar-blue{background:#6366f1}
+.bar-purple{background:#8b5cf6}
+.bar-green{background:#22c55e}
+.sc-status{font-size:11px;color:#6b7280;margin-top:6px}
+/* Card */
+.card{background:#fff;border-radius:12px;border:1px solid #e5e7eb;padding:18px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+/* Deadline */
+.dl-row{display:flex;align-items:center;justify-content:space-between;font-size:13px;padding:6px 0}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:8px;flex-shrink:0}
+.dot-red{background:#ef4444}
+.dot-amber{background:#f59e0b}
+.dot-green{background:#22c55e}
+.dl-date{font-size:11px;color:#9ca3af}
+/* Table */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;padding:9px 0;color:#6b7280;font-weight:600;border-bottom:1px solid #f3f4f6}
+td{padding:11px 0;color:#374151;border-bottom:1px solid #fafafa}
+td:first-child{font-weight:600;color:#111827}
+.badge{display:inline-block;padding:3px 11px;border-radius:999px;font-size:11px;font-weight:600}
+.badge-blue{background:#dbeafe;color:#1d4ed8}
+.badge-gray{background:#f3f4f6;color:#4b5563}
+.badge-green{background:#dcfce7;color:#15803d}
+/* Template cards */
+.tpl{background:#fff;border-radius:12px;border:1px solid #e5e7eb;border-top:4px solid;padding:20px;display:flex;flex-direction:column;gap:13px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+.tpl-blue{border-top-color:#4f46e5}
+.tpl-purple{border-top-color:#7c3aed}
+.tpl-green{border-top-color:#16a34a}
+.tpl-head{display:flex;justify-content:space-between;align-items:flex-start}
+.tpl-icon{font-size:28px}
+.tbadge{font-size:10px;padding:3px 9px;border-radius:999px;font-weight:700}
+.tbadge-blue{background:#e0e7ff;color:#3730a3}
+.tbadge-purple{background:#ede9fe;color:#5b21b6}
+.tbadge-green{background:#dcfce7;color:#166534}
+.tpl-title{font-size:15px;font-weight:700;color:#111827;margin-bottom:3px}
+.tpl-desc{font-size:12px;color:#6b7280;line-height:1.5}
+.tpl-meta{display:flex;gap:7px;flex-wrap:wrap}
+.mtag{background:#f3f4f6;color:#4b5563;font-size:11px;padding:3px 10px;border-radius:999px}
+.warn{background:#fffbeb;border:1px solid #fde68a;border-radius:9px;padding:10px;font-size:11px;color:#92400e;font-weight:600;line-height:1.4}
+/* Form */
+.formcard{background:#fff;border-radius:12px;border:1px solid #e5e7eb;padding:22px;display:flex;flex-direction:column;gap:16px;max-width:390px;box-shadow:0 1px 3px rgba(0,0,0,.05)}
+label{font-size:12px;font-weight:600;color:#374151;display:block;margin-bottom:5px}
+input,select{width:100%;border:1px solid #d1d5db;border-radius:9px;padding:8px 11px;font-size:13px;color:#6b7280;background:#fff;font-family:inherit}
+input::placeholder{color:#9ca3af}
+/* Login */
+.login-wrap{display:flex;align-items:center;justify-content:center;padding:40px;background:#f9fafb}
+.login-card{background:#fff;border-radius:14px;border:1px solid #e5e7eb;padding:30px;width:310px;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.login-icon{text-align:center;font-size:34px;margin-bottom:8px}
+.login-title{text-align:center;font-size:18px;font-weight:800;color:#111827;margin-bottom:3px}
+.login-sub{text-align:center;font-size:12px;color:#6b7280;margin-bottom:20px}
+.login-fields{display:flex;flex-direction:column;gap:13px}
+.login-link{text-align:center;margin-top:14px;font-size:12px;color:#6b7280}
+.login-link span{color:#4f46e5;font-weight:600}
+/* Progress */
+.progw{background:#fff;border-radius:12px;border:1px solid #e5e7eb;padding:14px}
+.pbb{background:#f3f4f6;border-radius:999px;height:10px;overflow:hidden;margin:7px 0 4px}
+.pbf{background:#4f46e5;height:100%;border-radius:999px}
+.prog-foot{font-size:11px;color:#9ca3af}
+/* Audit execution layout */
+.audit-lay{display:flex;gap:18px}
+.secnav{width:155px;flex-shrink:0;display:flex;flex-direction:column;gap:4px}
+.secbtn{display:block;padding:9px 11px;border-radius:9px;font-size:12px;text-align:left;background:#fff;border:1px solid #e5e7eb;color:#374151;width:100%;cursor:pointer;font-family:inherit}
+.secbtn.ac{background:#4f46e5;color:#fff;border-color:#4f46e5}
+.clst{flex:1;display:flex;flex-direction:column;gap:11px}
+.clst-h{font-size:14px;font-weight:700;color:#1f2937;margin-bottom:4px}
+.chitem{background:#fff;border-radius:11px;border:1px solid #e5e7eb;padding:14px}
+.chitem.critical{border-left:4px solid #fbbf24}
+.chrow{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.chtxt{font-size:13px;font-weight:600;color:#111827;line-height:1.4}
+.chref{font-size:11px;color:#9ca3af;margin-top:3px}
+.chbtns{display:flex;gap:7px;flex-shrink:0;margin-top:2px}
+.chbtn{display:inline-flex;align-items:center;padding:5px 11px;border-radius:8px;font-size:11px;font-weight:600;border:1px solid;cursor:pointer;font-family:inherit}
+.chbtn-yes{background:#dcfce7;color:#15803d;border-color:#86efac}
+.chbtn-no{background:#fee2e2;color:#dc2626;border-color:#fca5a5}
+.chbtn-na{background:#f3f4f6;color:#4b5563;border-color:#e5e7eb}
+.chnotes{display:block;margin-top:11px;width:100%;border:1px solid #e5e7eb;border-radius:8px;padding:7px 11px;font-size:11px;color:#9ca3af;font-family:inherit;resize:none;background:#fafafa}
+/* Reports */
+.score-green{font-weight:700;color:#15803d}
+.score-amber{font-weight:700;color:#d97706}
+.score-red{font-weight:700;color:#dc2626}
+.view-link{color:#4f46e5;font-size:12px;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="hdr">🏛️ AuditVault — UI Preview · All 6 Screens</div>
+
+<!-- ===== SCREEN 1: LOGIN ===== -->
+<div class="lbl">Screen 1 — Login Page</div>
+<div class="sc">
+  <div class="login-wrap">
+    <div class="login-card">
+      <div class="login-icon">🏛️</div>
+      <div class="login-title">Sign in to Audit Vault</div>
+      <div class="login-sub">Compliance made simple</div>
+      <div class="login-fields">
+        <div>
+          <label>Email</label>
+          <input type="email" placeholder="you@company.com">
+        </div>
+        <div>
+          <label>Password</label>
+          <input type="text" value="••••••••" style="color:#374151">
+        </div>
+        <button class="btn" style="width:100%;padding:10px 0;font-size:14px">Sign In →</button>
+      </div>
+      <div class="login-link">No account? <span>Create one</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 2: DASHBOARD ===== -->
+<div class="lbl">Screen 2 — Dashboard</div>
+<div class="sc">
+  <div class="flex">
+    <div class="sb">
+      <div class="sb-logo">🏛️ Audit Vault</div>
+      <div class="sb-nav">
+        <div class="ni ac">
+          <svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          Dashboard
+        </div>
+        <div class="ni">
+          <svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          Audits
+        </div>
+        <div class="ni">
+          <svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          Templates
+        </div>
+        <div class="ni">
+          <svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+          Reports
+        </div>
+        <div class="ni">
+          <svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+          Settings
+        </div>
+      </div>
+      <div class="sb-usr">
+        <div class="avt">D</div>
+        <div>
+          <div class="usr-name">Dharini</div>
+          <div class="usr-role">Auditor</div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div class="row-sb">
+        <div>
+          <h1>Welcome back 👋</h1>
+          <div class="sub">Here is your compliance overview</div>
+        </div>
+        <button class="btn">+ Start New Audit</button>
+      </div>
+      <div class="g3">
+        <div class="sc-blue">
+          <div class="sc-label">ISO 27001</div>
+          <div class="sc-num sc-num-blue">68%</div>
+          <div class="bar-bg"><div class="bar-fill bar-blue" style="width:68%"></div></div>
+          <div class="sc-status">⚠️ Needs Attention</div>
+        </div>
+        <div class="sc-purple">
+          <div class="sc-label">DPDP Act 2023</div>
+          <div class="sc-num sc-num-purple">34%</div>
+          <div class="bar-bg"><div class="bar-fill bar-purple" style="width:34%"></div></div>
+          <div class="sc-status">❌ Action Required</div>
+        </div>
+        <div class="sc-green">
+          <div class="sc-label">GST Annual Audit</div>
+          <div class="sc-num sc-num-green">91%</div>
+          <div class="bar-bg"><div class="bar-fill bar-green" style="width:91%"></div></div>
+          <div class="sc-status">✅ On Track</div>
+        </div>
+      </div>
+      <div class="card">
+        <h2>🔔 Upcoming Deadlines</h2>
+        <div class="dl-row"><div><span class="dot dot-red"></span>GSTR-9 Annual Return</div><span class="dl-date">Dec 31, 2025</span></div>
+        <div class="dl-row"><div><span class="dot dot-amber"></span>DPDP Full Compliance</div><span class="dl-date">May 13, 2027</span></div>
+        <div class="dl-row"><div><span class="dot dot-green"></span>ISO Surveillance Audit</div><span class="dl-date">Mar 15, 2026</span></div>
+      </div>
+      <div class="card">
+        <h2>📂 Recent Audits</h2>
+        <table>
+          <thead><tr><th>Audit</th><th>Client</th><th>Template</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>Acme Corp — GST Audit</td><td style="color:#6b7280;font-weight:400">Acme Corp</td><td style="color:#6b7280;font-weight:400">GST Annual</td><td><span class="badge badge-blue">In Progress</span></td></tr>
+            <tr><td>TechSoft — ISO 27001</td><td style="color:#6b7280;font-weight:400">TechSoft Pvt Ltd</td><td style="color:#6b7280;font-weight:400">ISO 27001</td><td><span class="badge badge-gray">Draft</span></td></tr>
+            <tr><td>RetailX — DPDP Audit</td><td style="color:#6b7280;font-weight:400">RetailX India</td><td style="color:#6b7280;font-weight:400">DPDP Act</td><td><span class="badge badge-green">Completed</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 3: TEMPLATES ===== -->
+<div class="lbl">Screen 3 — Template Library</div>
+<div class="sc">
+  <div class="flex">
+    <div class="sb">
+      <div class="sb-logo">🏛️ Audit Vault</div>
+      <div class="sb-nav">
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>Audits</div>
+        <div class="ni ac"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>Templates</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>Reports</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="3"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37"/></svg>Settings</div>
+      </div>
+      <div class="sb-usr"><div class="avt">D</div><div><div class="usr-name">Dharini</div><div class="usr-role">Auditor</div></div></div>
+    </div>
+    <div class="main">
+      <div>
+        <h1>📚 Template Library</h1>
+        <div class="sub">Choose a compliance framework to begin your audit</div>
+      </div>
+      <div class="g3">
+        <div class="tpl tpl-blue">
+          <div class="tpl-head"><span class="tpl-icon">🛡️</span><span class="tbadge tbadge-blue">Compliance</span></div>
+          <div><div class="tpl-title">ISO 27001 — Information Security</div><div class="tpl-desc">ISMS audit based on ISO/IEC 27001:2022. Covers governance, risk, technical controls, and audit evidence.</div></div>
+          <div class="tpl-meta"><span class="mtag">📄 25 Documents</span><span class="mtag">📂 7 Sections</span></div>
+          <div class="warn">⚠️ ISO certification denied if mandatory documents are missing</div>
+          <button class="btn" style="width:100%;padding:10px 0;font-size:13px">Start Audit →</button>
+        </div>
+        <div class="tpl tpl-purple">
+          <div class="tpl-head"><span class="tpl-icon">🔐</span><span class="tbadge tbadge-purple">Data Privacy</span></div>
+          <div><div class="tpl-title">DPDP Act 2023 Compliance</div><div class="tpl-desc">Digital Personal Data Protection Act 2023 (India). Covers consent, data inventory, breach management, and rights.</div></div>
+          <div class="tpl-meta"><span class="mtag">📄 22 Documents</span><span class="mtag">📂 7 Sections</span></div>
+          <div class="warn">⚠️ Penalties up to Rs.250 Crore per violation — deadline May 13, 2027</div>
+          <button class="btn btn-purple" style="width:100%;padding:10px 0;font-size:13px">Start Audit →</button>
+        </div>
+        <div class="tpl tpl-green">
+          <div class="tpl-head"><span class="tpl-icon">🧾</span><span class="tbadge tbadge-green">Tax</span></div>
+          <div><div class="tpl-title">Annual Tax / GST Audit</div><div class="tpl-desc">Annual GST compliance audit covering returns, ITC reconciliation, financial statements, and payroll.</div></div>
+          <div class="tpl-meta"><span class="mtag">📄 15 Documents</span><span class="mtag">📂 5 Sections</span></div>
+          <div class="warn">⚠️ Mandatory for companies with Rs.2 Crore+ annual revenue</div>
+          <button class="btn btn-green" style="width:100%;padding:10px 0;font-size:13px">Start Audit →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 4: NEW AUDIT FORM ===== -->
+<div class="lbl">Screen 4 — New Audit Form</div>
+<div class="sc">
+  <div class="flex">
+    <div class="sb">
+      <div class="sb-logo">🏛️ Audit Vault</div>
+      <div class="sb-nav">
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</div>
+        <div class="ni ac"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>Audits</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13"/></svg>Templates</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9"/></svg>Reports</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
+      </div>
+      <div class="sb-usr"><div class="avt">D</div><div><div class="usr-name">Dharini</div><div class="usr-role">Auditor</div></div></div>
+    </div>
+    <div class="main">
+      <div>
+        <h1>+ New Audit</h1>
+        <div class="sub">Set up a new compliance audit for your client</div>
+      </div>
+      <div class="formcard">
+        <div><label>Audit Template *</label>
+          <select>
+            <option>🛡️ ISO 27001 — Information Security</option>
+            <option>🔐 DPDP Act 2023 Compliance</option>
+            <option>🧾 Annual Tax / GST Audit</option>
+          </select>
+        </div>
+        <div><label>Audit Title *</label><input type="text" placeholder="e.g. Q1 2026 GST Audit — Acme Corp"></div>
+        <div><label>Client / Company Name *</label><input type="text" placeholder="e.g. Acme Corp Pvt Ltd"></div>
+        <div><label>Due Date</label><input type="date"></div>
+        <button class="btn" style="width:100%;padding:11px 0;font-size:14px">Create Audit →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 5: AUDIT EXECUTION ===== -->
+<div class="lbl">Screen 5 — Audit Execution Checklist</div>
+<div class="sc">
+  <div class="flex">
+    <div class="sb">
+      <div class="sb-logo">🏛️ Audit Vault</div>
+      <div class="sb-nav">
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</div>
+        <div class="ni ac"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>Audits</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5"/></svg>Templates</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2"/></svg>Reports</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
+      </div>
+      <div class="sb-usr"><div class="avt">D</div><div><div class="usr-name">Dharini</div><div class="usr-role">Auditor</div></div></div>
+    </div>
+    <div class="main">
+      <div class="row-sb">
+        <div>
+          <h1>🛡️ ISO 27001 — Information Security</h1>
+          <div class="sub">Answer each checklist item below</div>
+        </div>
+        <button class="btn">View Report →</button>
+      </div>
+      <div class="progw">
+        <div class="row-sb"><span style="font-size:13px;font-weight:600;color:#374151">Overall Progress</span><span style="font-size:14px;font-weight:800;color:#4f46e5">32%</span></div>
+        <div class="pbb"><div class="pbf" style="width:32%"></div></div>
+        <div class="prog-foot">8 of 25 items completed</div>
+      </div>
+      <div class="audit-lay">
+        <div class="secnav">
+          <button class="secbtn ac">✅ Information Security Policy</button>
+          <button class="secbtn">🔄 Risk Assessment</button>
+          <button class="secbtn">⬜ Asset Management</button>
+          <button class="secbtn">⬜ Access Control</button>
+          <button class="secbtn">⬜ Incident Management</button>
+          <button class="secbtn">⬜ Business Continuity</button>
+          <button class="secbtn">⬜ Compliance</button>
+        </div>
+        <div class="clst">
+          <div class="clst-h">📂 Information Security Policy</div>
+          <div class="chitem">
+            <div class="chrow">
+              <div>
+                <div class="chtxt">Information Security Policy document exists and is approved by management</div>
+                <div class="chref">ISO 27001 A.5.1</div>
+              </div>
+              <div class="chbtns">
+                <button class="chbtn chbtn-yes">✅ Yes</button>
+                <button class="chbtn chbtn-na">❌ No</button>
+                <button class="chbtn chbtn-na">N/A</button>
+              </div>
+            </div>
+            <textarea class="chnotes" rows="2" placeholder="Add notes or evidence references..."></textarea>
+          </div>
+          <div class="chitem">
+            <div class="chrow">
+              <div>
+                <div class="chtxt">Policy is reviewed at least annually</div>
+                <div class="chref">ISO 27001 A.5.1</div>
+              </div>
+              <div class="chbtns">
+                <button class="chbtn chbtn-na">✅ Yes</button>
+                <button class="chbtn chbtn-no">❌ No</button>
+                <button class="chbtn chbtn-na">N/A</button>
+              </div>
+            </div>
+          </div>
+          <div class="chitem critical">
+            <div class="chrow">
+              <div>
+                <div class="chtxt">Policy is communicated to all employees <span style="color:#ef4444;font-size:11px;font-weight:400"> — Critical</span></div>
+                <div class="chref">ISO 27001 A.5.1</div>
+              </div>
+              <div class="chbtns">
+                <button class="chbtn chbtn-na">✅ Yes</button>
+                <button class="chbtn chbtn-na">❌ No</button>
+                <button class="chbtn chbtn-na">N/A</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 6: REPORTS ===== -->
+<div class="lbl">Screen 6 — Reports</div>
+<div class="sc" style="margin-bottom:40px">
+  <div class="flex">
+    <div class="sb">
+      <div class="sb-logo">🏛️ Audit Vault</div>
+      <div class="sb-nav">
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>Dashboard</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2"/></svg>Audits</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5"/></svg>Templates</div>
+        <div class="ni ac"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>Reports</div>
+        <div class="ni"><svg class="ni-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Settings</div>
+      </div>
+      <div class="sb-usr"><div class="avt">D</div><div><div class="usr-name">Dharini</div><div class="usr-role">Auditor</div></div></div>
+    </div>
+    <div class="main">
+      <div>
+        <h1>📊 Reports</h1>
+        <div class="sub">Compliance reports for completed audits</div>
+      </div>
+      <div class="card">
+        <table>
+          <thead><tr><th>Audit</th><th>Client</th><th>Template</th><th>Score</th><th>Date</th><th></th></tr></thead>
+          <tbody>
+            <tr>
+              <td>Acme Corp — GST Audit</td>
+              <td style="color:#6b7280;font-weight:400">Acme Corp</td>
+              <td style="color:#6b7280;font-weight:400">GST Annual</td>
+              <td><span class="score-green">91%</span> <span style="font-size:11px;font-weight:400;color:#15803d">✅ Compliant</span></td>
+              <td style="color:#6b7280;font-weight:400">Apr 15, 2026</td>
+              <td><span class="view-link">View →</span></td>
+            </tr>
+            <tr>
+              <td>TechSoft — ISO 27001</td>
+              <td style="color:#6b7280;font-weight:400">TechSoft Pvt Ltd</td>
+              <td style="color:#6b7280;font-weight:400">ISO 27001</td>
+              <td><span class="score-amber">69%</span> <span style="font-size:11px;font-weight:400;color:#d97706">⚠️ Partial</span></td>
+              <td style="color:#6b7280;font-weight:400">Apr 10, 2026</td>
+              <td><span class="view-link">View →</span></td>
+            </tr>
+            <tr>
+              <td>RetailX — DPDP Audit</td>
+              <td style="color:#6b7280;font-weight:400">RetailX India</td>
+              <td style="color:#6b7280;font-weight:400">DPDP Act</td>
+              <td><span class="score-red">34%</span> <span style="font-size:11px;font-weight:400;color:#dc2626">❌ Action Required</span></td>
+              <td style="color:#6b7280;font-weight:400">Mar 28, 2026</td>
+              <td><span class="view-link">View →</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
