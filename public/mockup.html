@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AuditVault UI Preview</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+  .page-section { page-break-after: always; }
+</style>
+</head>
+<body class="bg-gray-100">
+
+<!-- ===== PAGE LABELS ===== -->
+<div class="text-center py-4 bg-indigo-600 text-white text-lg font-bold">AuditVault — UI Preview (All Screens)</div>
+
+<!-- ===== SCREEN 1: LOGIN ===== -->
+<div class="py-6 px-4">
+  <div class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">Screen 1 — Login</div>
+  <div class="min-h-96 flex items-center justify-center bg-gray-50 rounded-2xl border border-gray-200 py-12">
+    <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-8 w-full max-w-md">
+      <div class="text-center mb-6">
+        <span class="text-3xl">🏛️</span>
+        <h1 class="text-xl font-bold text-gray-900 mt-2">Sign in to Audit Vault</h1>
+        <p class="text-gray-500 text-sm mt-1">Compliance made simple</p>
+      </div>
+      <div class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+          <input type="email" placeholder="you@company.com" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-400" readonly />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+          <input type="text" value="••••••••" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-400" readonly />
+        </div>
+        <button class="w-full bg-indigo-600 text-white font-medium py-2.5 rounded-lg text-sm">Sign In →</button>
+      </div>
+      <p class="text-center text-sm text-gray-500 mt-4">No account? <span class="text-indigo-600">Create one</span></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 2: DASHBOARD ===== -->
+<div class="py-6 px-4">
+  <div class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">Screen 2 — Dashboard</div>
+  <div class="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
+    <div class="flex min-h-screen-half">
+      <!-- Sidebar -->
+      <aside class="w-56 bg-white border-r border-gray-200 flex flex-col shrink-0">
+        <div class="p-5 border-b border-gray-100">
+          <span class="text-base font-bold text-indigo-600">🏛️ Audit Vault</span>
+        </div>
+        <nav class="flex-1 p-3 space-y-1">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            Audits
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            Templates
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+            Reports
+          </div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+            Settings
+          </div>
+        </nav>
+        <div class="p-4 border-t border-gray-100">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm">D</div>
+            <div>
+              <p class="text-sm font-medium text-gray-800">Dharini</p>
+              <p class="text-xs text-gray-500">Auditor</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <!-- Main -->
+      <main class="flex-1 p-6 space-y-6 bg-gray-50">
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-2xl font-bold text-gray-900">Welcome back 👋</h1>
+            <p class="text-gray-500 mt-1 text-sm">Here is your compliance overview</p>
+          </div>
+          <button class="bg-indigo-600 text-white text-sm font-medium px-5 py-2.5 rounded-lg">+ Start New Audit</button>
+        </div>
+        <!-- Score cards -->
+        <div class="grid grid-cols-3 gap-4">
+          <div class="rounded-xl p-5 bg-indigo-50">
+            <p class="text-sm font-medium text-gray-600 mb-1">ISO 27001</p>
+            <p class="text-3xl font-bold text-indigo-600">68%</p>
+            <div class="mt-3 bg-white rounded-full h-2 overflow-hidden"><div class="bg-indigo-500 h-full rounded-full" style="width:68%"></div></div>
+            <p class="text-xs text-gray-500 mt-2">⚠️ Needs Attention</p>
+          </div>
+          <div class="rounded-xl p-5 bg-purple-50">
+            <p class="text-sm font-medium text-gray-600 mb-1">DPDP Act 2023</p>
+            <p class="text-3xl font-bold text-purple-600">34%</p>
+            <div class="mt-3 bg-white rounded-full h-2 overflow-hidden"><div class="bg-purple-500 h-full rounded-full" style="width:34%"></div></div>
+            <p class="text-xs text-gray-500 mt-2">❌ Action Required</p>
+          </div>
+          <div class="rounded-xl p-5 bg-green-50">
+            <p class="text-sm font-medium text-gray-600 mb-1">GST Annual Audit</p>
+            <p class="text-3xl font-bold text-green-600">91%</p>
+            <div class="mt-3 bg-white rounded-full h-2 overflow-hidden"><div class="bg-green-500 h-full rounded-full" style="width:91%"></div></div>
+            <p class="text-xs text-gray-500 mt-2">✅ On Track</p>
+          </div>
+        </div>
+        <!-- Deadlines -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-5">
+          <h3 class="text-sm font-semibold text-gray-700 mb-3">🔔 Upcoming Deadlines</h3>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-sm"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-red-500 inline-block"></span><span class="text-gray-700">GSTR-9 Annual Return</span></div><span class="text-gray-400 text-xs">Dec 31, 2025</span></div>
+            <div class="flex items-center justify-between text-sm"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-amber-400 inline-block"></span><span class="text-gray-700">DPDP Full Compliance</span></div><span class="text-gray-400 text-xs">May 13, 2027</span></div>
+            <div class="flex items-center justify-between text-sm"><div class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-green-500 inline-block"></span><span class="text-gray-700">ISO Surveillance Audit</span></div><span class="text-gray-400 text-xs">Mar 15, 2026</span></div>
+          </div>
+        </div>
+        <!-- Recent audits table -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <h2 class="text-base font-semibold text-gray-800 mb-4">📂 Recent Audits</h2>
+          <table class="w-full text-sm">
+            <thead><tr class="text-left text-gray-500 border-b border-gray-100"><th class="pb-3 font-medium">Audit</th><th class="pb-3 font-medium">Client</th><th class="pb-3 font-medium">Template</th><th class="pb-3 font-medium">Status</th></tr></thead>
+            <tbody class="divide-y divide-gray-50">
+              <tr><td class="py-3 font-medium text-gray-800">Acme Corp — GST Audit</td><td class="py-3 text-gray-600">Acme Corp</td><td class="py-3 text-gray-600">GST Annual</td><td class="py-3"><span class="px-2.5 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-700">In Progress</span></td></tr>
+              <tr><td class="py-3 font-medium text-gray-800">TechSoft — ISO 27001</td><td class="py-3 text-gray-600">TechSoft Pvt Ltd</td><td class="py-3 text-gray-600">ISO 27001</td><td class="py-3"><span class="px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600">Draft</span></td></tr>
+              <tr><td class="py-3 font-medium text-gray-800">RetailX — DPDP Audit</td><td class="py-3 text-gray-600">RetailX India</td><td class="py-3 text-gray-600">DPDP Act</td><td class="py-3"><span class="px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">Completed</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 3: TEMPLATES ===== -->
+<div class="py-6 px-4">
+  <div class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">Screen 3 — Template Library</div>
+  <div class="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
+    <div class="flex">
+      <!-- Sidebar (same, Templates active) -->
+      <aside class="w-56 bg-white border-r border-gray-200 flex flex-col shrink-0">
+        <div class="p-5 border-b border-gray-100"><span class="text-base font-bold text-indigo-600">🏛️ Audit Vault</span></div>
+        <nav class="flex-1 p-3 space-y-1">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📊 Dashboard</div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📋 Audits</div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white">📚 Templates</div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📊 Reports</div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">⚙️ Settings</div>
+        </nav>
+        <div class="p-4 border-t border-gray-100"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm">D</div><div><p class="text-sm font-medium text-gray-800">Dharini</p><p class="text-xs text-gray-500">Auditor</p></div></div></div>
+      </aside>
+      <main class="flex-1 p-6 space-y-6 bg-gray-50">
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900">📚 Template Library</h1>
+          <p class="text-gray-500 mt-1 text-sm">Choose a compliance framework to begin your audit</p>
+        </div>
+        <div class="grid grid-cols-3 gap-6">
+          <!-- ISO Card -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-indigo-500 p-6 flex flex-col gap-4">
+            <div class="flex items-start justify-between"><span class="text-3xl">🛡️</span><span class="text-xs font-medium px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-700">Compliance</span></div>
+            <div><h3 class="text-base font-semibold text-gray-900">ISO 27001 — Information Security</h3><p class="text-xs text-gray-500 mt-1">ISMS audit based on ISO/IEC 27001:2022. Covers governance, risk, technical controls, and audit evidence.</p></div>
+            <div class="flex gap-2 flex-wrap"><span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">📄 25 Documents</span><span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">📂 7 Sections</span></div>
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-3"><p class="text-xs text-amber-800 font-medium">⚠️ ISO certification denied if mandatory documents are missing</p></div>
+            <button class="w-full text-center text-sm font-medium text-white py-2.5 rounded-lg bg-indigo-600">Start Audit →</button>
+          </div>
+          <!-- DPDP Card -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-purple-500 p-6 flex flex-col gap-4">
+            <div class="flex items-start justify-between"><span class="text-3xl">🔐</span><span class="text-xs font-medium px-2.5 py-1 rounded-full bg-purple-100 text-purple-700">Data Privacy</span></div>
+            <div><h3 class="text-base font-semibold text-gray-900">DPDP Act 2023 Compliance</h3><p class="text-xs text-gray-500 mt-1">Digital Personal Data Protection Act 2023 (India). Covers consent, data inventory, breach management, and rights.</p></div>
+            <div class="flex gap-2 flex-wrap"><span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">📄 22 Documents</span><span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">📂 7 Sections</span></div>
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-3"><p class="text-xs text-amber-800 font-medium">⚠️ Penalties up to Rs.250 Crore per violation — deadline May 13, 2027</p></div>
+            <button class="w-full text-center text-sm font-medium text-white py-2.5 rounded-lg bg-purple-600">Start Audit →</button>
+          </div>
+          <!-- GST Card -->
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 border-t-4 border-t-green-500 p-6 flex flex-col gap-4">
+            <div class="flex items-start justify-between"><span class="text-3xl">🧾</span><span class="text-xs font-medium px-2.5 py-1 rounded-full bg-green-100 text-green-700">Tax</span></div>
+            <div><h3 class="text-base font-semibold text-gray-900">Annual Tax / GST Audit</h3><p class="text-xs text-gray-500 mt-1">Annual GST compliance audit covering returns, ITC reconciliation, financial statements, and payroll.</p></div>
+            <div class="flex gap-2 flex-wrap"><span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">📄 15 Documents</span><span class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">📂 5 Sections</span></div>
+            <div class="bg-amber-50 border border-amber-200 rounded-lg p-3"><p class="text-xs text-amber-800 font-medium">⚠️ Mandatory for companies with Rs.2 Crore+ annual revenue</p></div>
+            <button class="w-full text-center text-sm font-medium text-white py-2.5 rounded-lg bg-green-600">Start Audit →</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 4: NEW AUDIT FORM ===== -->
+<div class="py-6 px-4">
+  <div class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">Screen 4 — New Audit</div>
+  <div class="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
+    <div class="flex">
+      <aside class="w-56 bg-white border-r border-gray-200 flex flex-col shrink-0 py-4">
+        <div class="px-5 pb-4 border-b border-gray-100"><span class="text-base font-bold text-indigo-600">🏛️ Audit Vault</span></div>
+        <nav class="flex-1 p-3 space-y-1 mt-2">
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📊 Dashboard</div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white">📋 Audits</div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📚 Templates</div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📊 Reports</div>
+          <div class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium text-gray-600">⚙️ Settings</div>
+        </nav>
+        <div class="p-4 border-t border-gray-100 mt-4"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm">D</div><div><p class="text-sm font-medium text-gray-800">Dharini</p><p class="text-xs text-gray-500">Auditor</p></div></div></div>
+      </aside>
+      <main class="flex-1 p-6 bg-gray-50">
+        <div class="max-w-xl">
+          <div class="mb-6">
+            <h1 class="text-2xl font-bold text-gray-900">+ New Audit</h1>
+            <p class="text-gray-500 mt-1 text-sm">Set up a new compliance audit for your client</p>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 space-y-5">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Audit Template *</label>
+              <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-500"><option>🛡️ ISO 27001 — Information Security</option></select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Audit Title *</label>
+              <input type="text" placeholder="e.g. Q1 2026 GST Audit — Acme Corp" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-400" readonly />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Client / Company Name *</label>
+              <input type="text" placeholder="e.g. Acme Corp Pvt Ltd" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-400" readonly />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Due Date</label>
+              <input type="text" placeholder="dd/mm/yyyy" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-400" readonly />
+            </div>
+            <button class="w-full bg-indigo-600 text-white font-medium py-2.5 rounded-lg text-sm">Create Audit →</button>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 5: AUDIT EXECUTION ===== -->
+<div class="py-6 px-4">
+  <div class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">Screen 5 — Audit Execution Checklist</div>
+  <div class="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
+    <div class="flex">
+      <aside class="w-56 bg-white border-r border-gray-200 flex flex-col shrink-0 py-4">
+        <div class="px-5 pb-4 border-b border-gray-100"><span class="text-base font-bold text-indigo-600">🏛️ Audit Vault</span></div>
+        <nav class="flex-1 p-3 space-y-1 mt-2">
+          <div class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📊 Dashboard</div>
+          <div class="px-3 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white">📋 Audits</div>
+          <div class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📚 Templates</div>
+          <div class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📊 Reports</div>
+          <div class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600">⚙️ Settings</div>
+        </nav>
+        <div class="p-4 border-t border-gray-100 mt-4"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm">D</div><div><p class="text-sm font-medium text-gray-800">Dharini</p><p class="text-xs text-gray-500">Auditor</p></div></div></div>
+      </aside>
+      <main class="flex-1 p-6 bg-gray-50 space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h1 class="text-xl font-bold text-gray-900">🛡️ ISO 27001 — Information Security</h1>
+            <p class="text-sm text-gray-500">Answer each checklist item below</p>
+          </div>
+          <button class="bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-lg">View Report →</button>
+        </div>
+        <!-- Progress bar -->
+        <div class="bg-white rounded-xl border border-gray-200 p-4">
+          <div class="flex items-center justify-between mb-2"><span class="text-sm font-medium text-gray-700">Overall Progress</span><span class="text-sm font-bold text-indigo-600">32%</span></div>
+          <div class="bg-gray-100 rounded-full h-2.5 overflow-hidden"><div class="bg-indigo-500 h-full rounded-full" style="width:32%"></div></div>
+          <p class="text-xs text-gray-400 mt-1">8 of 25 items completed</p>
+        </div>
+        <div class="flex gap-5">
+          <!-- Section nav -->
+          <div class="w-48 shrink-0 space-y-1">
+            <button class="w-full text-left px-3 py-2.5 rounded-lg text-sm bg-indigo-600 text-white">✅ Information Security Policy</button>
+            <button class="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 bg-white border border-gray-100">🔄 Risk Assessment</button>
+            <button class="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 bg-white border border-gray-100">⬜ Asset Management</button>
+            <button class="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 bg-white border border-gray-100">⬜ Access Control</button>
+            <button class="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 bg-white border border-gray-100">⬜ Incident Management</button>
+            <button class="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 bg-white border border-gray-100">⬜ Business Continuity</button>
+            <button class="w-full text-left px-3 py-2.5 rounded-lg text-sm text-gray-700 bg-white border border-gray-100">⬜ Compliance</button>
+          </div>
+          <!-- Checklist items -->
+          <div class="flex-1 space-y-3">
+            <h2 class="text-base font-semibold text-gray-800">📂 Information Security Policy</h2>
+            <!-- Item 1 -->
+            <div class="bg-white rounded-xl border border-gray-200 p-4">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-sm font-medium text-gray-800">Information Security Policy document exists and is approved by management</p>
+                  <p class="text-xs text-gray-400 mt-1">ISO 27001 A.5.1</p>
+                </div>
+                <div class="flex gap-2 shrink-0">
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-green-100 text-green-700 border border-green-200">✅ Yes</button>
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">❌ No</button>
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">N/A</button>
+                </div>
+              </div>
+              <textarea class="mt-3 w-full border border-gray-200 rounded-lg px-3 py-2 text-xs text-gray-500 resize-none" rows="2" placeholder="Add notes..." readonly></textarea>
+            </div>
+            <!-- Item 2 -->
+            <div class="bg-white rounded-xl border border-gray-200 p-4">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-sm font-medium text-gray-800">Policy is reviewed at least annually</p>
+                  <p class="text-xs text-gray-400 mt-1">ISO 27001 A.5.1</p>
+                </div>
+                <div class="flex gap-2 shrink-0">
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">✅ Yes</button>
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-red-100 text-red-700 border border-red-200">❌ No</button>
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">N/A</button>
+                </div>
+              </div>
+            </div>
+            <!-- Item 3 -->
+            <div class="bg-white rounded-xl border border-gray-200 p-4 border-l-4 border-l-amber-400">
+              <div class="flex items-start justify-between gap-4">
+                <div>
+                  <p class="text-sm font-medium text-gray-800">Policy is communicated to all employees <span class="ml-1 text-xs text-red-500 font-normal">Critical</span></p>
+                  <p class="text-xs text-gray-400 mt-1">ISO 27001 A.5.1</p>
+                </div>
+                <div class="flex gap-2 shrink-0">
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">✅ Yes</button>
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">❌ No</button>
+                  <button class="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500">N/A</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCREEN 6: REPORTS ===== -->
+<div class="py-6 px-4 pb-12">
+  <div class="text-center text-sm font-semibold text-gray-500 uppercase tracking-widest mb-4">Screen 6 — Reports</div>
+  <div class="bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden">
+    <div class="flex">
+      <aside class="w-56 bg-white border-r border-gray-200 flex flex-col shrink-0 py-4">
+        <div class="px-5 pb-4 border-b border-gray-100"><span class="text-base font-bold text-indigo-600">��️ Audit Vault</span></div>
+        <nav class="flex-1 p-3 space-y-1 mt-2">
+          <div class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📊 Dashboard</div>
+          <div class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📋 Audits</div>
+          <div class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600">📚 Templates</div>
+          <div class="px-3 py-2 rounded-lg text-sm font-medium bg-indigo-600 text-white">📊 Reports</div>
+          <div class="px-3 py-2 rounded-lg text-sm font-medium text-gray-600">⚙️ Settings</div>
+        </nav>
+        <div class="p-4 border-t border-gray-100 mt-4"><div class="flex items-center gap-3"><div class="w-8 h-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-sm">D</div><div><p class="text-sm font-medium text-gray-800">Dharini</p><p class="text-xs text-gray-500">Auditor</p></div></div></div>
+      </aside>
+      <main class="flex-1 p-6 bg-gray-50 space-y-6">
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900">📊 Reports</h1>
+          <p class="text-gray-500 mt-1 text-sm">Compliance reports for completed audits</p>
+        </div>
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+          <table class="w-full text-sm">
+            <thead><tr class="text-left text-gray-500 border-b border-gray-100"><th class="pb-3 font-medium">Audit</th><th class="pb-3 font-medium">Client</th><th class="pb-3 font-medium">Template</th><th class="pb-3 font-medium">Score</th><th class="pb-3 font-medium">Date</th><th class="pb-3 font-medium"></th></tr></thead>
+            <tbody class="divide-y divide-gray-50">
+              <tr><td class="py-3 font-medium text-gray-800">Acme Corp — GST Audit</td><td class="py-3 text-gray-600">Acme Corp</td><td class="py-3 text-gray-600">GST Annual</td><td class="py-3 font-semibold text-green-600">91% <span class="font-normal text-xs ml-1">✅ Compliant</span></td><td class="py-3 text-gray-500">Apr 15, 2026</td><td class="py-3"><span class="text-indigo-600 text-xs font-medium">View →</span></td></tr>
+              <tr><td class="py-3 font-medium text-gray-800">TechSoft — ISO 27001</td><td class="py-3 text-gray-600">TechSoft Pvt Ltd</td><td class="py-3 text-gray-600">ISO 27001</td><td class="py-3 font-semibold text-amber-600">69% <span class="font-normal text-xs ml-1">⚠️ Partial</span></td><td class="py-3 text-gray-500">Apr 10, 2026</td><td class="py-3"><span class="text-indigo-600 text-xs font-medium">View →</span></td></tr>
+              <tr><td class="py-3 font-medium text-gray-800">RetailX — DPDP Audit</td><td class="py-3 text-gray-600">RetailX India</td><td class="py-3 text-gray-600">DPDP Act</td><td class="py-3 font-semibold text-red-600">34% <span class="font-normal text-xs ml-1">❌ Action Required</span></td><td class="py-3 text-gray-500">Mar 28, 2026</td><td class="py-3"><span class="text-indigo-600 text-xs font-medium">View →</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
