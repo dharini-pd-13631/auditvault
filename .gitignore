@@ -1,5 +1,27 @@
-node_modules/
-.next/
-.env.local
-out/
-build/
+# === Java / Maven ===
+target/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# === IDE ===
+.idea/
+*.iml
+*.iws
+.vscode/
+*.swp
+*.swo
+.project
+.classpath
+.settings/
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === Environment ===
+.env
+*.env.local
+application-local.properties

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<roles>
+    <role>
+        <name>SUPER_ADMIN</name>
+        <displayName>Super Admin</displayName>
+        <description>Full platform access — manage all users, firms, settings, system config</description>
+    </role>
+    <role>
+        <name>ADMIN</name>
+        <displayName>Admin</displayName>
+        <description>Firm-level admin — manage users within their firm, create templates</description>
+    </role>
+    <role>
+        <name>IT_AUDITOR</name>
+        <displayName>IT Auditor</displayName>
+        <description>Conducts ISO 27001 / DPDP / IT compliance audits</description>
+    </role>
+    <role>
+        <name>TAX_AUDITOR</name>
+        <displayName>Tax Auditor</displayName>
+        <description>Conducts GST / Income Tax / Tax compliance audits</description>
+    </role>
+    <role>
+        <name>COMPLIANCE_AUDITOR</name>
+        <displayName>Compliance Auditor</displayName>
+        <description>General compliance auditor — all audit types</description>
+    </role>
+    <role>
+        <name>CA_FIRM_MANAGER</name>
+        <displayName>CA Firm Manager</displayName>
+        <description>Manages a CA firm audit portfolio and assigns auditors</description>
+    </role>
+    <role>
+        <name>CLIENT_VIEWER</name>
+        <displayName>Client Viewer</displayName>
+        <description>Read-only access to view own audit status and reports</description>
+    </role>
+</roles>

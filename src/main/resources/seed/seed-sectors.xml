@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sectors>
+    <sector><code>IT</code><name>Information Technology</name><icon>💻</icon></sector>
+    <sector><code>FINANCE</code><name>Finance &amp; Banking</name><icon>🏦</icon></sector>
+    <sector><code>HEALTHCARE</code><name>Healthcare</name><icon>🏥</icon></sector>
+    <sector><code>RETAIL</code><name>Retail &amp; E-Commerce</name><icon>🛒</icon></sector>
+    <sector><code>MANUFACTURING</code><name>Manufacturing</name><icon>🏭</icon></sector>
+    <sector><code>EDUCATION</code><name>Education</name><icon>🎓</icon></sector>
+    <sector><code>GOVERNMENT</code><name>Government</name><icon>🏛️</icon></sector>
+    <sector><code>LEGAL</code><name>Legal &amp; Professional</name><icon>⚖️</icon></sector>
+</sectors>
