@@ -39,6 +39,7 @@ public class DashboardService {
                 .totalAudits(total).draftCount(draft)
                 .inProgressCount(inProgress).completedCount(completed)
                 .recentAudits(recent).upcomingDeadlines(deadlines)
+                .complianceScores(List.of())
                 .build();
     }
 
