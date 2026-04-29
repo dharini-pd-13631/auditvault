@@ -159,6 +159,46 @@ cd auditvault
 
 ---
 
+## Frontend (React UI)
+
+A React single-page application is included in the `frontend/` directory.
+
+### Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+# UI at http://localhost:3000
+```
+
+The frontend proxies API requests to `http://localhost:8080` (the Spring Boot backend). Make sure the backend is running first.
+
+### Frontend Pages
+
+| Page | Path | Description |
+|------|------|-------------|
+| Login | `/login` | Sign in with email/password |
+| Register | `/register` | Create new account |
+| Dashboard | `/dashboard` | Audit stats, recent audits, deadlines, compliance scores |
+| Audits | `/audits` | List all audits, create new |
+| Audit Detail | `/audits/:id` | View audit details, change status, see responses |
+| Templates | `/templates` | Browse audit templates |
+| Deadlines | `/deadlines` | View compliance deadlines |
+| Sectors | `/sectors` | Browse sectors and applicable laws |
+| Users | `/users` | Admin: manage users and roles |
+
+### Tech Stack (Frontend)
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | React 18 |
+| Routing | React Router 6 |
+| Build Tool | Vite 5 |
+| Styling | CSS (no framework) |
+
+---
+
 ## What's Next 🔜
 - PDF report generation
 - Compliance score calculation
@@ -168,4 +208,3 @@ cd auditvault
 - Unit + integration tests
 - Docker setup
 - CI/CD pipeline
-- Frontend (React/Angular)
