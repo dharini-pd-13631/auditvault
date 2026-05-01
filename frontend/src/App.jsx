@@ -11,6 +11,7 @@ import Templates from './pages/Templates';
 import Deadlines from './pages/Deadlines';
 import Sectors from './pages/Sectors';
 import Users from './pages/Users';
+import OnboardingWizard from './pages/onboarding/OnboardingWizard';
 
 function PrivateRoute({ children }) {
   const { user } = useAuth();
@@ -29,6 +30,7 @@ export default function App() {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/onboarding" element={<PrivateRoute><OnboardingWizard /></PrivateRoute>} />
       <Route path="/" element={<PrivateRoute><Layout /></PrivateRoute>}>
         <Route index element={<Navigate to="/dashboard" />} />
         <Route path="dashboard" element={<Dashboard />} />
