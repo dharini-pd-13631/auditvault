@@ -6,7 +6,7 @@ export default function UploadDocs({ documents, onChange }) {
   const handleFileSelect = (e) => {
     const files = Array.from(e.target.files);
     const newDocs = files.map(file => ({
-      id: Date.now() + Math.random(),
+      id: crypto.randomUUID(),
       name: file.name,
       size: file.size,
       type: file.type,

@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export default function CompanyProfile({ data, onChange }) {
   const handleChange = (e) => {
     onChange({ ...data, [e.target.name]: e.target.value });
