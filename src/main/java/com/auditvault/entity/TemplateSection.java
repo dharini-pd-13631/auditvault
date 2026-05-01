@@ -1,5 +1,6 @@
 package com.auditvault.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class TemplateSection {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "template_id", nullable = false)
     @ToString.Exclude @EqualsAndHashCode.Exclude
+    @JsonIgnore
     private Template template;
 
     @Column(nullable = false, length = 200)
