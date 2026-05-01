@@ -1,6 +1,7 @@
 package com.auditvault.entity;
 
 import com.auditvault.enums.RiskLevel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import java.util.UUID;
@@ -15,6 +16,7 @@ public class ChecklistItem {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "section_id", nullable = false)
     @ToString.Exclude @EqualsAndHashCode.Exclude
+    @JsonIgnore
     private TemplateSection section;
 
     @Column(nullable = false, columnDefinition = "TEXT")
